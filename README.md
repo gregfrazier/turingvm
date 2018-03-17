@@ -1,4 +1,4 @@
-# Nine-Op Turing VM
+# Eight-Op Turing VM
 Turing Complete VM with 8 Instructions
 
 ### About
