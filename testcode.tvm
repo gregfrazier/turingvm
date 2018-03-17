@@ -1,0 +1,56 @@
+.PRELOAD 33,E,n,t,e,r,32,N,a,m,e,:,32,!
+.CODE_SEGMENT
+; point register 0 to the next location in memory
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+NEXT 0
+; point register 2 to beginning of message
+NEXT 2
+LABEL printMessage
+PUTC 2
+NEXT 2
+CMP 1 2
+JE startInput
+CMP 1 1
+JE printMessage
+LABEL startInput
+; get a character from input
+GETC 0
+; compare register 1 ('!') to 0 (input char) -- subtracts 0 from 1 and sets zero flag if they are equal
+CMP 1 0
+; move register 0 to next location in mem
+NEXT 0
+; Jump to label d if the previous compare set the zero flag
+JE primeInput
+; compare register 1 to itself, this sets up an unconditional jump
+CMP 1 1
+; unconditionally jump to label t
+JE startInput
+LABEL primeInput
+NEXT 2
+LABEL printInput
+; print char from register 2, which points to the original location of register 0
+PUTC 2
+; move reg 2 to the next value
+NEXT 2
+; check if Reg 2 is at char '!'
+CMP 1 2
+; if it is, jump to label r
+JE endProgram
+; unconditionally jump back to d until reg 2 is '!'
+CMP 1 1
+JE printInput
+LABEL endProgram
+; operation has to be here since there is no halt command
+INC 1
