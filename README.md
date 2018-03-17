@@ -55,5 +55,3 @@ LABEL complete
 * Opcodes are fed into the VM
 * VM interprets and processes instructions. Program counter increments until out of instructions, after which the program ends.
 * Any error is thrown as runtime exception and will dump a stack trace.
-
-<sub>I am not a fan of java, but this did only take an hour to put together so it's good for something.</sub>
