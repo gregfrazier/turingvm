@@ -16,7 +16,7 @@ class VM {
     private Jump jmp;
 
     private List<Integer> byteCode;
-    private int PC = 0;
+    private int PC = 1;
     VM(List<Integer> byteCode) {
         this.byteCode = byteCode;
         mem = new Memory(20000);
@@ -27,7 +27,7 @@ class VM {
     }
     private void setPCMemory() {
         PC = byteCode.get(0);
-        if(PC != 0){ // prime the memory with values
+        if(PC != 1){ // prime the memory with values
             for(int x = 1; x < PC; ++x)
                 mem.setVal(x - 1, byteCode.get(x));
         }

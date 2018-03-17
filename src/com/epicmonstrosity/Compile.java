@@ -19,7 +19,7 @@ class Compile {
     private List<Integer> byteCode;
     private Map<String, Integer> labelLocation;
     private Map<String, List<Integer>> jumpLocation;
-    private int codeSegmentLocation = 0;
+    private int codeSegmentLocation = 1;
     Compile() {
         byteCode = new ArrayList<>();
         labelLocation = new HashMap<>();
