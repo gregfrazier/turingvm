@@ -3,7 +3,9 @@ Turing Complete VM with 8 Instructions
 
 ### About
 Eight operation 32-bit VM with 80k memory (32-bit boundaries, so essentially 20k) preinitialized to 0.
+
 Ten Registers (0-9) that point to memory locations, all start at location 0.
+
 Technically Turing Complete.
 
 ### Operations
@@ -46,5 +48,12 @@ CMP 1 1
 JE printMessage
 LABEL complete
 ```
+
+### Architecture
+* Write code in simple, but irritating assembly-style language
+* Feed into pseudo-compiler, which converts each command into 32-bit wide bytecode
+* Opcodes are fed into the VM
+* VM interprets and processes instructions. Program counter increments until out of instructions, after which the program ends.
+* Any error is thrown as runtime exception and will dump a stack trace.
 
 <sub>I am not a fan of java, but this did only take an hour to put together so it's good for something.</sub>
